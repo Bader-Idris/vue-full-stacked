@@ -1,0 +1,85 @@
+.btn-1 {
+  @include widthHeight(158px, 40px);
+  @include displayFlex(row, center, center);
+  text-transform: uppercase;
+  color: $pureWhite;
+  background-color: $pureBlack;
+  letter-spacing: 2px;
+  transition: background-color 1s;
+
+  &:hover {
+    color: $pureBlack;
+    &::after,
+    &::before {
+      @include widthHeight(158px, 40px);
+      @include displayFlex(row, center, center);
+      position: absolute;
+    }
+    &::after {
+      content: "";
+      background-color: $lightGrey;
+      transform-origin: left;
+      color: $pureWhite;
+      animation: hoverBtn 0.3s ease-out forwards;
+      top: 0;
+    }
+    &::before {
+      content: "get an invite";
+      z-index: 10;
+      animation: colorTextBtn 0.5s ease-out forwards;
+    }
+
+    @keyframes hoverBtn {
+      0% {
+        transform: scaleX(0);
+      }
+      100% {
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes colorTextBtn {
+      0% {
+        color: $pureWhite;
+      }
+      100% {
+        color: $pureBlack;
+      }
+    }
+  }
+}
+
+.btn-2 {
+  height: 16px;
+  text-transform: uppercase;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+  position: relative;
+  margin-top: 7%;
+  svg {
+    margin-left: 16px;
+  }
+  &:hover {
+    &::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      top: 25px;
+      transform-origin: left;
+      animation: hoverBtn 0.3s ease-out forwards;
+    }
+    @keyframes hoverBtn {
+      0% {
+        transform: scaleX(0);
+      }
+      100% {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

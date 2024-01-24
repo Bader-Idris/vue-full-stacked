@@ -1,0 +1,98 @@
+.footerMenu {
+  @include widthHeight(100%, 250px);
+  @include displayFlex(row, center, center);
+  background-color: $pureBlack;
+  @include mobile-only {
+    height: 539px;
+  }
+
+  &--contain {
+    @include widthHeight(75%, 122px);
+    position: relative;
+    @include mobile-only {
+      @include widthHeight(310px, 427px);
+    }
+    &_logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include mobile-only {
+        right: 0;
+        margin: auto;
+        width: 170px;
+      }
+    }
+    &_links {
+      @include widthHeight(255px, 121px);
+      @include displayFlex(column, space-between, start);
+      position: absolute;
+      left: 27%;
+      margin: 0;
+      & a {
+        color: $pureWhite !important;
+        &:hover::after {
+          background-color: $pureWhite !important;
+        }
+      }
+
+      @include tablet-only {
+        flex-direction: row;
+        left: 0;
+        top: -18px;
+      }
+      @include mobile-only {
+        flex-direction: column;
+        align-items: center;
+        top: 117px;
+        margin: auto;
+        left: 0;
+        right: 0;
+      }
+    }
+    &_icons {
+      @include widthHeight(154px, 20px);
+      @include displayFlex(row, space-between, center);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      @include mobile-only {
+        top: 48px;
+        right: 0;
+        margin: auto;
+        bottom: auto;
+      }
+    }
+    &_textCopyright {
+      color: $pureWhite;
+      opacity: 0.5;
+      margin: 0;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      @include mobile-only {
+        left: 0;
+        margin: auto;
+        width: 255px;
+        font-size: 15px;
+      }
+    }
+
+    .btn-2 {
+      width: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: $pureWhite;
+      margin-top: 0;
+      &:hover::after {
+        background-color: $pureWhite;
+      }
+      @include mobile-only {
+        top: auto;
+        bottom: 54px;
+        left: 0;
+        margin: auto;
+      }
+    }
+  }
+}

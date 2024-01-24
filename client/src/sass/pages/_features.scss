@@ -1,0 +1,24 @@
+.features {
+  width: 100%;
+  height: auto;
+  &--image_hero {
+    background-image: url("../public/features/desktop/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &--breakpoints {
+    width: 100%;
+    // height: 500px;
+    background-color: #fff;
+    @include displayFlex(row, space-around, center);
+    flex-wrap: wrap;
+    margin-top: 7%;
+    // margin-bottom: 7%;
+    @include tablet-only {
+      height: 1500px;
+    }
+    @include mobile-only {
+      height: auto;
+    }
+  }
+}

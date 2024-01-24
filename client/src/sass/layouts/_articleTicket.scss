@@ -1,0 +1,180 @@
+.articleTicket {
+  &:nth-of-type(2n + 1) {
+    @include displayFlex(row, center, center);
+    @include mobile-only {
+      @include displayFlex(column-reverse, center, center);
+    }
+  }
+  &:nth-of-type(2n) {
+    @include displayFlex(row-reverse, center, center);
+    @include mobile-only {
+      @include displayFlex(column-reverse, center, center);
+    }
+  }
+
+  &--text {
+    @include widthHeight(40%, 100%);
+    @include tablet-only {
+      @include widthHeight(60%, 100%);
+    }
+    @include displayFlex(row, flex-start, center);
+    // @include mobile-only {
+    //     position: relative;
+    //     &::before {
+    //         content:'';
+    //         width: 128px;
+    //         height: 6px;
+    //         background: linear-gradient(#e66465, #9198e5);
+    //         position: absolute;
+    //        top: 0;
+    //        left: 10%
+    //     }
+    // }
+
+    &_contain {
+      @include widthHeight(373px, auto);
+      @include displayFlex(column, space-between, flex-start);
+      padding-left: 12%;
+      position: relative;
+      // &::before {
+      //     content:'';
+      //     width: 6px;
+      //     height: 100%;
+      //     background: linear-gradient(#e66465, #9198e5);
+      //     position: absolute;
+      //     left: 0;
+      //     @include mobile-only {
+      //         display: none;
+      //     }
+      // }
+      h2 {
+        color: $pureWhite;
+        margin-bottom: 21px;
+      }
+      p {
+        @include widthHeight(100%, auto);
+        @include displayFlex(column, space-between, flex-start);
+        line-height: 25px;
+        color: $pureWhite;
+        opacity: 0.6;
+        // margin-bottom: 48px;
+      }
+      @include mobile-only {
+        @include widthHeight(318px, auto);
+        h2 {
+          margin-bottom: 16px;
+        }
+        p {
+          margin-bottom: 23px;
+          @include widthHeight(100%, auto);
+        }
+      }
+    }
+    @include mobile-only {
+      @include widthHeight(100%, 419px);
+    }
+  }
+  &--image {
+    @include widthHeight(60%, 100%);
+    @include tablet-only {
+      @include widthHeight(40%, 100%);
+    }
+    &_createAndShare {
+      background-image: url("../public/home/desktop/create-and-share.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &_beautifulStories {
+      background-image: url("../public/home/desktop/beautiful-stories.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &_designedForEveryone {
+      background-image: url("../public/home/desktop/designed-for-everyone.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    @include tablet-only {
+      // @include widthHeight(273px, 100%);
+      &_createAndShare {
+        background-image: url("../public/home/tablet/create-and-share.jpg");
+      }
+      &_beautifulStories {
+        background-image: url("../public/home/tablet/beautiful-stories.jpg");
+      }
+      &_designedForEveryone {
+        background-image: url("../public/home/tablet/designed-for-everyone.jpg");
+      }
+    }
+    @include mobile-only {
+      @include widthHeight(100%, 294px);
+      &_createAndShare {
+        background-image: url("../public/home/mobile/create-and-share.jpg");
+        background-size: cover;
+      }
+      &_beautifulStories {
+        background-image: url("../public/home/mobile/beautiful-stories.jpg");
+        background-size: cover;
+      }
+      &_designedForEveryone {
+        background-image: url("../public/home/mobile/designed-for-everyone.jpg");
+        background-size: cover;
+      }
+    }
+  }
+}
+
+.articleTicket--principal {
+  @include widthHeight(100%, 650px);
+  .articleTicket--text {
+    background-color: $pureBlack;
+    @include mobile-only {
+      position: relative;
+      &::before {
+        content: "";
+        width: 128px;
+        height: 6px;
+        background: linear-gradient(to left, #ffc593, #bc7198, #5a77ff);
+        position: absolute;
+        top: 0;
+        left: 10%;
+      }
+    }
+    h2,
+    p,
+    a {
+      color: $pureWhite;
+    }
+    a:hover::after {
+      background-color: $pureWhite;
+    }
+    &_contain {
+      &::before {
+        content: "";
+        width: 6px;
+        height: 100%;
+        background: linear-gradient(#ffc593, #bc7198, #5a77ff);
+        position: absolute;
+        left: 0;
+        @include mobile-only {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.articleTicket--secondary {
+  @include widthHeight(100%, 600px);
+  .articleTicket--text {
+    background-color: $pureWhite;
+    h2,
+    p,
+    a {
+      color: $pureBlack;
+    }
+    a:hover::after {
+      background-color: $pureBlack;
+    }
+  }
+}

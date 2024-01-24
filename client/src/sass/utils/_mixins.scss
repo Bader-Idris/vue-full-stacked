@@ -1,0 +1,30 @@
+@mixin widthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin displayFlex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin backgroundImage($imageName) {
+  background-image: url("../../../public/stories/desktop/#{$imageName}"); //+".jpg"
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include mobile-only {
+    background-image: url("../../../public/stories/mobile/#{$imageName}");
+    background-position: bottom;
+  }
+}

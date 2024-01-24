@@ -1,0 +1,36 @@
+.headerStories {
+  @include widthHeight(100%, 650px);
+  position: relative;
+  background-image: url("../public/stories/desktop/moon-of-appalacia.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include tablet-only {
+    background-image: url("../public/stories/tablet/moon-of-appalacia.jpg");
+  }
+  @include mobile-only {
+    background-image: url("../public/stories/mobile/moon-of-appalacia.jpg");
+  }
+  &--text {
+    @include displayFlex(column, space-around, flex-start);
+    @include widthHeight(387px, 406px);
+    color: #fff;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    &_paragraph {
+      opacity: 0.6;
+    }
+    &_btn {
+      color: #fff;
+      justify-content: flex-start;
+    }
+    @include mobile-only {
+      width: 322px;
+    }
+  }
+}
+
+.articlesList {
+  @include displayFlex(row, center, center);
+  flex-wrap: wrap;
+}

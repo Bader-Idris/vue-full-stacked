@@ -1,0 +1,28 @@
+.home {
+  &--articles {
+    @include widthHeight(100%, auto);
+    @include displayFlex(row, center, center);
+    @include tablet-only {
+      flex-wrap: wrap;
+    }
+  }
+  &--breakpoints {
+    @include widthHeight(100%, auto);
+    @include displayFlex(row, space-around, center);
+    margin: 12% auto 5% auto;
+    &_contain {
+      @include widthHeight(1110px, 236px);
+      @include displayFlex(row, space-between, center);
+      @include tablet-only {
+        @include widthHeight(457px, 775px);
+        @include displayFlex(column, space-between, center);
+      }
+      @include mobile-only {
+        @include widthHeight(310px, 802px);
+      }
+    }
+    @include tablet-only {
+      @include displayFlex(column, center, center);
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.article {
+  @include widthHeight(25%, 500px);
+  position: relative;
+  margin-top: 0;
+  transition: margin-top ease-in-out 0.2s;
+  &:hover {
+    margin-top: -30px;
+    cursor: pointer;
+    &::after {
+      content: "";
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(to left, #ffc593, #bc7198, #5a77ff);
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    @include widthHeight(100%, 100%);
+    background-color: #000;
+    opacity: 0.5;
+  }
+  .article--containText {
+    @include widthHeight(280px, 110px);
+    margin-left: 10%;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    p {
+      color: $pureWhite;
+    }
+    &_date {
+      font-size: 13px;
+      font-weight: 100;
+      margin-bottom: 5px;
+    }
+    &_title {
+      font-weight: 700;
+      margin-bottom: 9px;
+      margin-top: 10px;
+      color: $pureWhite;
+    }
+    &_author {
+      font-size: 13px;
+    }
+    .article--containText_author::before {
+      content: "";
+      @include widthHeight(280px, 1px);
+      background-color: $pureWhite;
+      position: absolute;
+      top: 80px;
+    }
+    .article--containText_btn {
+      position: absolute;
+      bottom: 0;
+      color: $pureWhite;
+    }
+  }
+
+  @include tablet-only {
+    @include widthHeight(50%, 500px);
+  }
+
+  @include mobile-only {
+    @include widthHeight(100%, 375px);
+  }
+}
+
+.article--image_theMountains {
+  @include backgroundImage("mountains");
+}
+.article--image_sunsetCityscapes {
+  @include backgroundImage("cityscapes");
+}
+.article--image_18DaysVoyage {
+  @include backgroundImage("18-days-voyage");
+}
+.article--image_architecturals {
+  @include backgroundImage("architecturals");
+}
+.article--image_worldTour2019 {
+  @include backgroundImage("world-tour");
+}
+.article--image_unforeseen {
+  @include backgroundImage("unforeseen-corners");
+}
+.article--image_kingonAfrica {
+  @include backgroundImage("king-on-africa");
+}
+.article--image_theTriptoNowhere {
+  @include backgroundImage("trip-to-nowhere");
+}
+.article--image_rageofTheSea {
+  @include backgroundImage("rage-of-the-sea");
+}
+.article--image_runningFree {
+  @include backgroundImage("running-free");
+}
+.article--image_behindTheWaves {
+  @include backgroundImage("behind-the-waves");
+}
+.article--image_calmWaters {
+  @include backgroundImage("calm-waters");
+}
+.article--image_theMilkyWay {
+  @include backgroundImage("milky-way");
+}
+.article--image_nightAtTheDarkForest {
+  @include backgroundImage("dark-forest");
+}
+.article--image_somwarpetsBeauty {
+  @include backgroundImage("somwarpet");
+}
+.article--image_landofDreams {
+  @include backgroundImage("land-of-dreams");
+}

@@ -1,0 +1,48 @@
+.pricing {
+  width: 100%;
+  height: auto;
+  &--image_hero {
+    background-image: url("../public/pricing/desktop/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+  &--cards {
+    @include displayFlex(row, center, center);
+    margin: 3% 0;
+    @include tablet-only {
+      @include displayFlex(column, center, center);
+    }
+  }
+  &--cardsTablet {
+    margin: auto;
+  }
+  &--switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    .switch {
+      margin: 0 20px;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 700;
+      opacity: 0.5;
+    }
+    .isChecked {
+      opacity: 1;
+    }
+  }
+  &--title {
+    text-align: center;
+    margin-top: 7%;
+    @include tablet-only {
+      margin-top: 12%;
+      margin-bottom: 5%;
+    }
+    @include mobile-only {
+      display: none;
+    }
+  }
+}

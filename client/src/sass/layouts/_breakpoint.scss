@@ -1,0 +1,25 @@
+.breakpoint {
+  @include widthHeight(30%, 210px);
+  @include displayFlex(column, space-between, center);
+  margin-bottom: 8%;
+  @include tablet-only {
+    @include widthHeight(50%, 210px);
+  }
+  @include mobile-only {
+    @include widthHeight(100%, 210px);
+    margin-bottom: 19%;
+  }
+  .breakpoint--text {
+    @include widthHeight(100%, 116px);
+    @include displayFlex(column, start, center);
+    &_nameBreakpoint {
+      font-weight: 700;
+    }
+    p {
+      text-align: center;
+      margin-top: 20px;
+      width: 300px;
+      opacity: 0.6;
+    }
+  }
+}

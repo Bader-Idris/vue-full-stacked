@@ -1,0 +1,23 @@
+.navMenu {
+  @include widthHeight(100%, 72px);
+  @include displayFlex(row, center, center);
+  background-color: #fff;
+  &--desktop {
+    @include widthHeight(1110px, 40px);
+    @include displayFlex(row, space-between, center);
+    margin: auto;
+    &_links {
+      @include widthHeight(269px, 16px);
+      @include displayFlex(row, space-between, center);
+      a:hover::after {
+        background-color: $pureBlack;
+      }
+    }
+    @include tablet-only {
+      width: 689px;
+    }
+    @include mobile-only {
+      display: none;
+    }
+  }
+}
