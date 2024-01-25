@@ -1,7 +1,9 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from "node:url";
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+
+import autoprefixer from "autoprefixer";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,15 +14,20 @@ export default defineConfig({
         additionalData: `@import "./src/sass/main.scss";`,
       },
     },
+    postcss: {
+      plugins: [
+        autoprefixer({
+          overrideBrowserslist: ["defaults", "last 2 versions", "IE 11"],
+          grid: "stable",
+          flexbox: "modern",
+          cascade: false,
+        }),
+      ],
+    },
   },
   resolve: {
     alias: {
-      "@": fileURLToPath(
-        new URL(
-          "./src",
-          import.meta.url
-        )
-      ),
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
   // Add Babel configuration

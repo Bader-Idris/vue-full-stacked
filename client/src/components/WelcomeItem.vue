@@ -2,10 +2,14 @@
   <nav>
     <ul>
       <li>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">
+          Home
+        </RouterLink>
       </li>
       <li>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/about">
+          About
+        </RouterLink>
       </li>
       <li>
         <!-- <RouterLink></RouterLink> -->
@@ -23,7 +27,7 @@
         <Logo color="#000" />
       </li>
       <li>
-        <Nav></Nav>
+        <Nav />
       </li>
     </div>
   </nav>

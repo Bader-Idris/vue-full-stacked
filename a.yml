@@ -8,7 +8,7 @@ services:
     ports:
       - "5000:80"
     volumes:
-      - ./client/dist:/usr/share/nginx/html/dist:ro
+      - ./client/dist:/usr/share/nginx/html:ro
     depends_on:
       - app
   app:

@@ -1,9 +1,10 @@
 client/node_modules/
 server/node_modules/
-Dockerfile
+server/Dockerfile
 .dockerignore
 .gitignore
 a.yml
 b.yml
 b.prod.yml
 b.dev.yml
+server/dist

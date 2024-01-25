@@ -2,23 +2,33 @@
   <main class="pricing">
     <ArticleTicket
       color=""
-      classNameImage="pricing--image_hero"
-      classNameArticleTicket="articleTicket--principal"
+      class-name-image="pricing--image_hero"
+      class-name-article-ticket="articleTicket--principal"
     >
-      <template v-slot:title>Pricing</template>
-      <template v-slot:paragraphe
-        >Create a your stories, Photosnap is a platform for photographers and
+      <template #title>
+        Pricing
+      </template>
+      <template #paragraphe>
+        Create a your stories, Photosnap is a platform for photographers and
         visual storytellers. It’s the simple way to create and share your
-        photos.</template
-      >
+        photos.
+      </template>
     </ArticleTicket>
     <div class="pricing--switch">
-      <p :class="{ isChecked: !checked }">Monthly</p>
+      <p :class="{ isChecked: !checked }">
+        Monthly
+      </p>
       <label class="switch">
-        <input type="checkbox" id="checkbox" v-model="checked" />
-        <span class="slider"></span>
+        <input
+          type="checkbox"
+          id="checkbox"
+          v-model="checked"
+        >
+        <span class="slider" />
       </label>
-      <p :class="{ isChecked: checked }">Yearly</p>
+      <p :class="{ isChecked: checked }">
+        Yearly
+      </p>
     </div>
     <div class="pricing--cards">
       <Card
@@ -26,21 +36,21 @@
         paragraph="Includes basic usage of our platform. Recommended for new and aspiring photographers."
         :price="checked !== true ? '19.00' : '190.00'"
         :period="checked !== true ? 'month' : 'year'"
-        className="card--normal"
+        class-name="card--normal"
       />
       <Card
         title="Pro"
         paragraph="More advanced features available. Recommended for photography veterans and professionals."
         :price="checked !== true ? '39.00' : '390.00'"
         :period="checked !== true ? 'month' : 'year'"
-        className="card--pro"
+        class-name="card--pro"
       />
       <Card
         title="Business"
         paragraph="Additional features available such as more detailed metrics. Recommended for business owners."
         :price="checked !== true ? '99.00' : '990.00'"
         :period="checked !== true ? 'month' : 'year'"
-        className="card--normal"
+        class-name="card--normal"
       />
     </div>
     <div class="pricing--cardsTablet">
@@ -49,24 +59,26 @@
         paragraph="Includes basic usage of our platform. Recommended for new and aspiring photographers."
         :price="checked !== true ? '19.00' : '190.00'"
         :period="checked !== true ? 'month' : 'year'"
-        className="cardTablet--normal"
+        class-name="cardTablet--normal"
       />
       <CardTablet
         title="Pro"
         paragraph="More advanced features available. Recommended for photography veterans and professionals."
         :price="checked !== true ? '39.00' : '390.00'"
         :period="checked !== true ? 'month' : 'year'"
-        className="cardTablet--pro"
+        class-name="cardTablet--pro"
       />
       <CardTablet
         title="Business"
         paragraph="Additional features available such as more detailed metrics. Recommended for business owners."
         :price="checked !== true ? '99.00' : '990.00'"
         :period="checked !== true ? 'month' : 'year'"
-        className="cardTablet--normal"
+        class-name="cardTablet--normal"
       />
     </div>
-    <h2 class="h2-large pricing--title">Compare</h2>
+    <h2 class="h2-large pricing--title">
+      Compare
+    </h2>
     <TableCompare />
     <TableCompareMobile />
     <BannerFooter />

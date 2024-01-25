@@ -7,13 +7,28 @@
         </li>
       </ul>
       <ul class="navMenu--desktop_links">
-        <li><router-link to="/stories">Stories</router-link></li>
-        <li><router-link to="/Features">Features</router-link></li>
-        <li><router-link to="/Pricing">Pricing</router-link></li>
+        <li>
+          <router-link to="/stories">
+            Stories
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/Features">
+            Features
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/Pricing">
+            Pricing
+          </router-link>
+        </li>
       </ul>
-      <router-link to="/stories" class="navMenu--desktop_btn1 btn-1 a-btn"
-        >get an invite</router-link
+      <router-link
+        to="/stories"
+        class="navMenu--desktop_btn1 btn-1 a-btn"
       >
+        get an invite
+      </router-link>
     </div>
     <NavMobile />
   </nav>

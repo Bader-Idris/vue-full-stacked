@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <Nav />
-    <transition name="fade" mode="out-in">
+    <transition
+      name="fade"
+      mode="out-in"
+    >
       <router-view />
     </transition>
     <Footer />
@@ -10,8 +13,6 @@
 
 <!-- <script setup> 🔴it was setup🔴-->
 <script>
-import { RouterLink, RouterView } from "vue-router";
-
 import Nav from "@/components/Nav.vue";
 import Footer from "@/components/Footer.vue";
 

@@ -14,7 +14,8 @@ services:
     volumes:
       - ./server:/app
       - /app/node_modules
-      - ./client:/app/client:ro
+      - ./client/dist:/app/dist:ro
+      # - /app/dist
     # volumes:
     #   - ./server/:/server
     #   - /server/node_modules

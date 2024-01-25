@@ -9,12 +9,4 @@ RUN if [ "$NODE_ENV" = "development" ]; \
 COPY . ./
 ENV PORT 3000
 EXPOSE $PORT
-
-WORKDIR /app/client
-# RUN npm run build
-# RUN ["npm", "run", "build"]
-
-# RUN ["npm", "--prefix", "../client", "run", "build"]
-WORKDIR /app
 CMD ["npm", "start"]
-# command: sh -c "npm --prefix ./client run build && npm start"

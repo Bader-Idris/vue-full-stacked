@@ -11,6 +11,7 @@ const express = require("express");
 const app = express();
 const { connectDB } = require("./db/connect");
 const authenticateUser = require("./middleware/authentication");
+const history = require("connect-history-api-fallback");
 
 const authRouter = require("./routes/auth");
 
@@ -56,7 +57,7 @@ app.use(xss());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(express.static(path.join(__dirname, './dist')));
-app.use(express.static(path.resolve(__dirname, './client/dist')));
+app.use(express.static(path.resolve(__dirname, './dist')));
 
 let redisClient = createClient({
   url: `redis://${REDIS_USER}:${REDIS_PASSWORD}@${REDIS_URL}:${REDIS_PORT}`
@@ -88,11 +89,25 @@ app.use(
 const colorScheme = require('./middleware/colorScheme')
 // app.use("/", colorScheme, frontAPIs);
 app.use("/api/v1", backEndApis);
-
+app.use(
+  history({
+    //for vue and html5 history apis
+    appendSlash: true,
+    index: `${path.resolve(__dirname, "./dist", "index.html")}`,
+    // appConfig: {
+    //   // Additional configuration for specific SPA frameworks (e.g., Vue.js)
+    //   createWebHistory()
+    // },
+  })
+);
 // app.use(errorHandlerMiddleware);
+// make robots.txt sent as domain.com/robots.txt
+app.get("/robots.txt", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "public", "robots.txt"));
+});
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./dist", "index.html"));
 });
 
 const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/${MONGO_DB_NAME}?authSource=admin`;

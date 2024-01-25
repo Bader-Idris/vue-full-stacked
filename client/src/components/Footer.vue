@@ -8,16 +8,24 @@
       />
       <ul class="footerMenu--contain_links">
         <li class="footerMenu--contain_link">
-          <router-link to="/home">Home</router-link>
+          <router-link to="/">
+            Home
+          </router-link>
         </li>
         <li class="footerMenu--contain_link">
-          <router-link to="/stories">Stories</router-link>
+          <router-link to="/stories">
+            Stories
+          </router-link>
         </li>
         <li class="footerMenu--contain_link">
-          <router-link to="/Features">Features</router-link>
+          <router-link to="/features">
+            Features
+          </router-link>
         </li>
         <li class="footerMenu--contain_link">
-          <router-link to="/Features">Pricing</router-link>
+          <router-link to="/pricing">
+            Pricing
+          </router-link>
         </li>
       </ul>
       <div class="footerMenu--contain_icons">
@@ -91,17 +99,24 @@
           />
         </svg>
       </div>
-      <a href="" class="btn-2"
-        >get an invite<svg
-          width="42"
-          height="14"
-          viewBox="0 0 42 14"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M0 7H41.864" stroke="white" />
-          <path d="M35.4282 1L41.4282 7L35.4282 13" stroke="white" /></svg
-      ></a>
+      <a
+        href=""
+        class="btn-2"
+      >get an invite<svg
+        width="42"
+        height="14"
+        viewBox="0 0 42 14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 7H41.864"
+          stroke="white"
+        />
+        <path
+          d="M35.4282 1L41.4282 7L35.4282 13"
+          stroke="white"
+        /></svg></a>
       <p class="footerMenu--contain_textCopyright">
         Copyright 2024. All Rights Reserved
       </p>
